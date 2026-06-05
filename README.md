@@ -99,6 +99,7 @@ Create a `.env` file and add your API keys:
 ```env
 GEMINI_API_KEY=your_key_here
 WEATHER_API_KEY=your_key_here
+OPENWEATHER_API_KEY=your_key_here
 NEWS_API_KEY=your_key_here
 ```
 
