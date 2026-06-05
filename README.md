@@ -1,55 +1,84 @@
 # Jarvis AI Voice Assistant
 
-Jarvis is a voice-enabled AI assistant built with Flask, JavaScript, and Google's Gemini API.
+A web-based AI voice assistant inspired by JARVIS, built using Flask, JavaScript, and Google's Gemini AI.
 
 ## Features
 
-* AI-powered chat using Gemini
-* Voice-to-text input
-* Text-to-speech responses
-* Hands-Free Mode
+* AI-powered conversations using Gemini
+* Voice input using Speech Recognition
+* Hands-Free conversation mode
+* Text-to-Speech responses
+* Play music from YouTube
 * Open websites using voice commands
-* Play songs from YouTube
-* Weather information
+* Real-time weather information
 * Latest news headlines
-* Current time lookup
-* Dark/Light mode
-* Chat history using Local Storage
+* Dark and Light mode support
+* Chat history saved using Local Storage
 
-## Technologies Used
+## Tech Stack
 
 ### Backend
 
 * Python
 * Flask
 * Gemini API
-* OpenWeather API
-* News API
-* YouTube Data API
 
 ### Frontend
 
-* HTML
-* CSS
+* HTML5
+* CSS3
 * JavaScript
+
+### APIs & Services
+
+* Gemini AI
+* YouTube Search
+* Weather API
+* News API
 * Web Speech API
+
+## Project Structure
+
+```text
+Jarvis-AI-Voice-Assistant/
+│
+├── app.py
+├── requirements.txt
+├── .gitignore
+│
+├── services/
+│   ├── command_processor.py
+│   ├── gemini_service.py
+│   ├── youtube_service.py
+│   ├── weather_service.py
+│   └── news_service.py
+│
+├── templates/
+│   └── index.html
+│
+└── static/
+    ├── css/
+    │   └── style.css
+    └── js/
+        └── script.js
+```
 
 ## Installation
 
-### Clone Repository
+### 1. Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/jarvis-ai.git
-cd jarvis-ai
+git clone https://github.com/yashmehta1910/Jarvis-AI-Voice-Assistant.git
+cd Jarvis-AI-Voice-Assistant
 ```
 
-### Create Virtual Environment
+### 2. Create Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-### Activate Environment
+### 3. Activate Virtual Environment
 
 Windows:
 
@@ -57,22 +86,23 @@ Windows:
 .venv\Scripts\activate
 ```
 
-### Install Dependencies
+### 4. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Create .env File
+### 5. Create Environment File
+
+Create a `.env` file and add your API keys:
 
 ```env
-GEMINI_API_KEY=your_key
-OPENWEATHER_API_KEY=your_key
-YOUTUBE_API_KEY=your_key
-NEWS_API_KEY=your_key
+GEMINI_API_KEY=your_key_here
+WEATHER_API_KEY=your_key_here
+NEWS_API_KEY=your_key_here
 ```
 
-### Run Application
+### 6. Run Application
 
 ```bash
 python app.py
@@ -86,24 +116,26 @@ http://127.0.0.1:5000
 
 ## Voice Commands
 
-### Open Websites
+### Open Website
 
 ```text
 open youtube
 open github
-open iit kanpur
+open google
 ```
 
 ### Play Music
 
 ```text
 play shape of you
+play believer
 ```
 
 ### Weather
 
 ```text
 weather in delhi
+weather in london
 ```
 
 ### News
@@ -118,44 +150,17 @@ latest news
 what time is it
 ```
 
-## Project Structure
-
-```text
-jarvis-ai/
-│
-├── app.py
-├── requirements.txt
-├── .env
-│
-├── services/
-│   ├── command_processor.py
-│   ├── gemini_service.py
-│   ├── weather_service.py
-│   ├── news_service.py
-│   └── youtube_service.py
-│
-├── templates/
-│   └── index.html
-│
-├── static/
-│   ├── css/
-│   │   └── style.css
-│   │
-│   └── js/
-│       └── script.js
-│
-└── README.md
-```
-
 ## Future Improvements
 
 * Wake word detection ("Hey Jarvis")
-* Multi-language support
-* AI memory
-* Calendar integration
-* Email integration
-* Smart home controls
+* Spotify integration
+* System automation commands
+* Smart home integration
+* Desktop application
+* Better music recommendations
 
 ## Author
 
 Yash Kumar Mehta
+
+Built as a personal AI assistant project using Flask and Gemini AI.
