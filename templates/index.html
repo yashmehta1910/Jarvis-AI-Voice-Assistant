@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS — AI Voice Assistant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<!-- Ambient grid background -->
+<div class="grid-bg" aria-hidden="true"></div>
+<!-- Animated scan line -->
+<div class="scan-line" aria-hidden="true"></div>
+
+<!-- Corner HUD brackets -->
+<div class="corner corner-tl" aria-hidden="true"></div>
+<div class="corner corner-tr" aria-hidden="true"></div>
+<div class="corner corner-bl" aria-hidden="true"></div>
+<div class="corner corner-br" aria-hidden="true"></div>
+
+<div class="container">
+
+    <!-- ── HEADER ─────────────────────────── -->
+    <header class="header">
+
+        <div class="logo">
+            <div class="logo-ring">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="logo-text">
+                <h1>JARVIS</h1>
+            </div>
+        </div>
+
+        <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>System Online</span>
+        </div>
+
+        <div class="header-actions">
+
+            <button id="activate-btn" title="Activate Jarvis">
+                <i class="fas fa-microphone-lines"></i>
+                <span>Talk to Jarvis</span>
+            </button>
+
+            <button id="assistant-mode-btn">
+                <i class="fas fa-rotate"></i>
+                <span>Hands-Free</span>
+            </button>
+
+            <button class="icon-btn" id="clear-chat-btn" title="Clear Chat">
+                <i class="fas fa-trash-can"></i>
+            </button>
+
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">
+                <i class="fas fa-circle-half-stroke"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ── CHAT AREA ───────────────────────── -->
+    <main id="chat-container"></main>
+
+    <!-- ── TYPING INDICATOR ────────────────── -->
+    <div id="typing-indicator" class="hidden">
+        <div class="typing-inner">
+            <div class="typing-dots">
+                <span></span><span></span><span></span>
+            </div>
+            <p>Jarvis is processing...</p>
+        </div>
+    </div>
+
+    <!-- ── INPUT AREA ─────────────────────── -->
+    <div class="input-section">
+
+        <button id="voice-btn" title="Voice Input" class="circle-btn">
+            <i class="fas fa-microphone"></i>
+        </button>
+
+        <div class="input-wrap">
+            <span class="input-prefix">&gt;</span>
+            <textarea
+                id="message-input"
+                placeholder="Ask Jarvis anything..."
+                rows="1"
+            ></textarea>
+        </div>
+
+        <button id="send-btn" class="circle-btn send" title="Send">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
