@@ -7,6 +7,17 @@ const themeBtn = document.getElementById("theme-toggle");
 const voiceBtn = document.getElementById("voice-btn");
 const activateBtn = document.getElementById("activate-btn");
 
+
+const statusDot =
+document.getElementById(
+    "status-dot"
+);
+
+const statusText =
+document.getElementById(
+    "status-text"
+);
+
 messageInput.addEventListener(
     "input",
     () => {
@@ -79,6 +90,27 @@ function speak(text) {
 
     speechSynthesis.speak(speech);
 }
+
+function setOnlineStatus(){
+
+    statusDot.classList.remove(
+        "error"
+    );
+
+    statusText.innerText =
+        "System Online";
+}
+
+function setErrorStatus(){
+
+    statusDot.classList.add(
+        "error"
+    );
+
+    statusText.innerText =
+        "System Error";
+}
+
 
 /* -----------------------------
    LOCAL STORAGE
@@ -219,6 +251,14 @@ async function sendMessage() {
             })
 
         });
+
+        if(!response.ok){
+
+            throw new Error(
+                "Server Error"
+            );
+
+        }
 
         const data = await response.json();
 
@@ -513,10 +553,18 @@ async function sendMessage() {
 
         if (data.error) {
 
+            setErrorStatus();
+
             addMessage(
                 data.error,
                 "bot"
             );
+
+            setTimeout(() => {
+
+                setOnlineStatus();
+
+            },5000);
 
             return;
         }
@@ -539,7 +587,11 @@ async function sendMessage() {
 
     } catch (error) {
 
-        typingIndicator.classList.add("hidden");
+        setErrorStatus();
+
+        typingIndicator.classList.add(
+            "hidden"
+        );
 
         addMessage(
             "Something went wrong.",
@@ -547,6 +599,12 @@ async function sendMessage() {
         );
 
         console.error(error);
+
+        setTimeout(() => {
+
+            setOnlineStatus();
+
+        }, 5000);
 
     }
 

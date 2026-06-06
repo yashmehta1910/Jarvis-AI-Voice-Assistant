@@ -197,6 +197,16 @@ body.light-mode .grid-bg {
     animation: pulse-dot 2s ease-in-out infinite;
     flex-shrink: 0;
 }
+
+.status-dot.error{
+
+    background: #ff3b3b;
+
+    box-shadow:
+    0 0 10px #ff3b3b;
+
+}
+
 @keyframes pulse-dot {
     0%,100% { opacity: 1; }
     50%      { opacity: 0.35; }

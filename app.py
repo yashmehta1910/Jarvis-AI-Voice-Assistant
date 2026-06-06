@@ -189,7 +189,20 @@ def chat():
         # AI Chat Response
         # ==================================================
 
-        reply = get_response(user_message)
+        reply = get_response(
+            user_message
+        )
+
+        if (
+            reply ==
+            "Sorry, I am unable to "
+            "process that request right now."
+        ):
+
+            return jsonify({
+                "error":
+                "AI service unavailable."
+            }), 500
 
         return jsonify({
             "type": "chat",
