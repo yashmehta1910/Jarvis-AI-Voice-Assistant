@@ -611,7 +611,7 @@ function getWelcomeMessage() {
 
             <br>
 
-            • Weather in Delhi
+            • Weather in Cityname
 
             <br>
 
